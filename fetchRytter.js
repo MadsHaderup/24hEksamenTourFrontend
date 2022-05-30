@@ -1,20 +1,22 @@
 const rytterUrl = 'http://localhost:8080/api/rytter';
+const rytterUrlSorted = 'http://localhost:8080/api/rytter/sort';
 
 const rytterMap = new Map();
 
 
-function fetchAllRytter() {
-    out("get all film kaldt");
-    return fetch(rytterUrl).then(response => response.json());
+function fetchAllRytter(url) {
+    out("fetchAllRytter");
+    return fetch(url).then(response => response.json());
 }
 
-async function createRytterMap() {
-    out("show alle film");
-    const rytterList = await fetchAllRytter();
+async function createRytterMap(url) {
+    rytterMap.clear();
+    out("createRytterMap");
+    const rytterList = await fetchAllRytter(url);
     rytterList.forEach((rytter) => {
         out(rytter.navn);
         rytterMap.set(rytter.navn, rytter);
-        out(rytterMap.size);
+
     })
 }
 /*
@@ -23,6 +25,8 @@ async function callRytterMap(){
 }*/
 
 const pbFetchRytter = document.getElementById('getRytter');
+const pbFetchRytterSorted = document.getElementById('getRytterSorted');
 
 //add event listeners
-pbFetchRytter.addEventListener('click', createRytterMap);
+pbFetchRytter.addEventListener('click', createRytterMap(rytterUrl));
+pbFetchRytterSorted.addEventListener('click', createRytterMap(rytterUrlSorted));

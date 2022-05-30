@@ -1,4 +1,4 @@
-createRytterMap();
+//createRytterMap();
 
 function addRow(rytter) {
     const rowCount = rytterTable.rows.length;
