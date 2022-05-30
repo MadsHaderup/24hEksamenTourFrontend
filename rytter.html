@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Rytter</title>
-    <script src="rytter.js" defer></script>
+
 </head>
 <body>
-<h2>Counties</h2>
-<table class="content-table" id="countyTable">
-    <thead>
-    <tr>
-        <th>Navn</th>
-        <th>Alder</th>
-        <th>Bjerg Point</th>
-        <th>Spurt Point</th>
-        <th>Tid Totalt</th>
-        <th>Hold Navn</th>
-        <th>Delete</th>
-        <th>Update</th>
-    </tr>
+<div id="container">
+    <div class="row">
+        <button id="getRytter" class="btn-options">Hent film</button>
+        <button id="createTable" class="btn-options">Vis film</button>
 
-    </thead>
-    <tr></tr>
-</table>
+    </div>
+    <h2>Counties</h2>
+    <table class="content-table" id="rytterTable">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Navn</th>
+            <th>Alder</th>
+            <th>Bjerg Point</th>
+            <th>Spurt Point</th>
+            <th>Tid Totalt</th>
+            <th>Hold Id</th>
+            <th>Hold Navn</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+
+        </thead>
+        <tr></tr>
+    </table>
+</div>
 <div id="formdiv">
     <form action="http://localhost:8080/api/rytter" method="post" id="newRytterForm">
         <label for="navn"></label>
@@ -43,5 +52,8 @@
         <button type=submit title="Gem" id="submit">Opret</button>
     </form>
 </div>
+<script src="rytter.js" ></script>
+<script src="fetchRytter.js" ></script>
+<script src="createRytterTable.js" ></script>
 </body>
 </html>
