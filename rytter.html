@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rytter</title>
+    <script src="rytter.js" defer></script>
+</head>
+<body>
+<h2>Counties</h2>
+<table class="content-table" id="countyTable">
+    <thead>
+    <tr>
+        <th>Navn</th>
+        <th>Alder</th>
+        <th>Bjerg Point</th>
+        <th>Spurt Point</th>
+        <th>Tid Totalt</th>
+        <th>Hold Navn</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    </thead>
+    <tr></tr>
+</table>
+<div id="formdiv">
+    <form action="http://localhost:8080/api/rytter" method="post" id="newRytterForm">
+        <label for="navn"></label>
+        <input type="text" name="navn" placeholder="Rytterens navn">
+        <label for="alder"></label>
+        <input type="number" name="alder" placeholder="Rytterens alder">
+        <label for="bjergPoint"></label>
+        <input type="number" name="bjergPoint" placeholder="Rytterens bjerg point">
+        <label for="spurtPoint"></label>
+        <input type="number" name="spurtPoint" placeholder="Rytterens spurt point">
+        <div id="time-span">
+            <input type="number" name="timer" min="0" step="1" placeholder="timer"/>:<input type="number" name="minutter" min="0" max="59" step="1" placeholder="minutter" />:<input type="number" name="sekunder" min="0" max="59" step="1" placeholder="sekunder"/>
+        </div>
+        <button type="button"  id="pbFillDropDown">Hent film til dropdown</button>
+        <select id="ddHold"></select>
+
+
+        <button type=submit title="Gem" id="submit">Opret</button>
+    </form>
+</div>
+</body>
+</html>
