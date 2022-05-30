@@ -39,9 +39,6 @@ function addRow(rytter) {
     inp4.setAttribute("value", rytter.tid);
     cell.appendChild(inp4);
 
-    cell = row.insertCell(colCount++);
-    cell.innerText = rytter.hold.id;
-
     //Create a dropdown
     cell = row.insertCell(colCount++);
     const ddHold = document.createElement("select");
