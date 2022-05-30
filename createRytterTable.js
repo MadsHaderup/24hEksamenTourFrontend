@@ -152,6 +152,10 @@ async function restDeleteCounty(rytter) {
 
 function createTableFromMap() {
     console.log(rytterMap.size);
+    if(document.getElementById("rytterTable").hasChildNodes()){
+        let childNodes = rytterTable.childNodes;
+        childNodes.forEach(elm => rytterTable.removeChild(elm));
+    }
     rytterMap.forEach(rytter => addRow(rytter));
 }
 

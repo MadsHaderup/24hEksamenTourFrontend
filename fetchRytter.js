@@ -11,7 +11,7 @@ function fetchAllRytter(url) {
 
 async function createRytterMap(url) {
     rytterMap.clear();
-    out("createRytterMap");
+    out("createRytterMap url: " + url);
     const rytterList = await fetchAllRytter(url);
     rytterList.forEach((rytter) => {
         out(rytter.navn);
@@ -28,5 +28,5 @@ const pbFetchRytter = document.getElementById('getRytter');
 const pbFetchRytterSorted = document.getElementById('getRytterSorted');
 
 //add event listeners
-pbFetchRytter.addEventListener('click', createRytterMap(rytterUrl));
-pbFetchRytterSorted.addEventListener('click', createRytterMap(rytterUrlSorted));
+pbFetchRytter.addEventListener('click', function(){createRytterMap(rytterUrl)});
+pbFetchRytterSorted.addEventListener('click', function(){createRytterMap(rytterUrlSorted)});
