@@ -112,8 +112,11 @@ async function openForm() {
     holdDropDown();
     document.getElementById("popUpForm").style.display = "block";
 }
+async function closeForm() {
+    document.getElementById("popUpForm").style.display = "none";
+}
 
-
-
+const exitFormButton = document.getElementById('closebtn');
 const createRytter = document.getElementById('addRytter');
 createRytter.addEventListener('click', openForm);
+exitFormButton.addEventListener('click', closeForm);
