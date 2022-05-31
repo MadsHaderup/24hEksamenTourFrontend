@@ -8,9 +8,10 @@
 <body>
 <div id="container">
     <div class="row">
-        <button id="getRytter" class="btn-options">Hent film</button>
-        <button id="getRytterSorted" class="btn-options">Hent Ryttere Sortere</button>
-        <button id="createTable" class="btn-options">Vis film</button>
+        <button id="getRytter" class="btn-options">Hent Ryttere</button>
+        <button id="getRytterSorted" class="btn-options">Hent Ryttere Sorteret</button>
+        <button id="createTable" class="btn-options">Vis Ryttere</button>
+        <button id="addRytter" class="btn-options">Tilføj Rytter</button>
 
     </div>
     <h2>Counties</h2>
@@ -31,25 +32,27 @@
         <tr></tr>
     </table>
 </div>
-<div id="formdiv">
-    <form action="http://localhost:8080/api/rytter" method="post" id="newRytterForm">
-        <label for="navn"></label>
-        <input type="text" name="navn" placeholder="Rytterens navn">
-        <label for="alder"></label>
-        <input type="number" name="alder" placeholder="Rytterens alder">
-        <label for="bjergPoint"></label>
-        <input type="number" name="bjergPoint" placeholder="Rytterens bjerg point">
-        <label for="spurtPoint"></label>
-        <input type="number" name="spurtPoint" placeholder="Rytterens spurt point">
-        <div id="time-span">
-            <input type="number" name="timer" min="0" step="1" placeholder="timer"/>:<input type="number" name="minutter" min="0" max="59" step="1" placeholder="minutter" />:<input type="number" name="sekunder" min="0" max="59" step="1" placeholder="sekunder"/>
-        </div>
-        <button type="button"  id="pbFillDropDown">Hent film til dropdown</button>
-        <select id="ddHold"></select>
+<div id="popup">
+    <div class="formPopUp" id="popUpForm">
+        <form action="http://localhost:8080/api/rytter" method="post" id="newRytterForm">
+            <label for="navn"></label>
+            <input type="text" name="navn" placeholder="Rytterens navn">
+            <label for="alder"></label>
+            <input type="number" name="alder" placeholder="Rytterens alder">
+            <label for="bjergPoint"></label>
+            <input type="number" name="bjergPoint" placeholder="Rytterens bjerg point">
+            <label for="spurtPoint"></label>
+            <input type="number" name="spurtPoint" placeholder="Rytterens spurt point">
+            <div id="time-span">
+                <input type="number" name="timer" min="0" step="1" placeholder="timer"/>:<input type="number" name="minutter" min="0" max="59" step="1" placeholder="minutter" />:<input type="number" name="sekunder" min="0" max="59" step="1" placeholder="sekunder"/>
+            </div>
+
+            <select id="ddHold"></select>
 
 
-        <button type=submit title="Gem" id="submit">Opret</button>
-    </form>
+            <button type=submit title="Gem" id="submit">Opret</button>
+        </form>
+    </div>
 </div>
 <script src="rytter.js" ></script>
 <script src="fetchRytter.js" ></script>

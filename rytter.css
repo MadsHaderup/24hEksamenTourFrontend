@@ -48,7 +48,7 @@
     border-bottom: 2px solid #009789;
 }
 
-input[type="text"], input[type="button"] {
+input[type="text"], input[type="button"], input[type=number] {
     border-radius: 10px;
     padding: 12px 15px;
     border: 1px solid black;
@@ -87,4 +87,44 @@ h1, h2 {
     text-align: center;
     margin-bottom: 20px;
     font-family: "Times New Roman";
+}
+
+.popup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.formPopUp {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 5%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+}
+#newRytterForm {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#newRytterForm .btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #8ebf42;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+#newRytterForm .cancel {
+    background-color: #cc0000;
+}
+
+
+#newRytterForm .btn:hover,
+#openButton:hover {
+    opacity: 1;
 }

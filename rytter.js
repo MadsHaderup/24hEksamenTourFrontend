@@ -108,7 +108,12 @@ async function holdDropDown() {
     });
 }
 
-const pbFillDropDown = document.getElementById('pbFillDropDown');
-const ddHold = document.getElementById("ddHold");
+async function openForm() {
+    holdDropDown();
+    document.getElementById("popUpForm").style.display = "block";
+}
 
-pbFillDropDown.addEventListener('click', holdDropDown);
+
+
+const createRytter = document.getElementById('addRytter');
+createRytter.addEventListener('click', openForm);
