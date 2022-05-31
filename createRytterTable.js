@@ -1,6 +1,7 @@
 //createRytterMap();
 
 function addRow(rytter) {
+
     const rowCount = rytterTable.rows.length;
     console.log("row count: " + rowCount);
     let row = rytterTable.insertRow(rowCount);
@@ -64,7 +65,7 @@ function addRow(rytter) {
     cell = row.insertCell(colCount++);
     const pbDelete = document.createElement("input");
     pbDelete.type = "button";
-    pbDelete.setAttribute('value', 'Slet Rytter');
+    pbDelete.setAttribute('value', 'Slet');
     pbDelete.onclick = function () {
         deleteRow(rytter, rowCount, row);
     }
@@ -74,7 +75,7 @@ function addRow(rytter) {
     cell = row.insertCell(colCount++);
     const pbUpdate = document.createElement("input");
     pbUpdate.type = "button";
-    pbUpdate.setAttribute('value', 'Update Kommune');
+    pbUpdate.setAttribute('value', 'Update');
     pbUpdate.onclick = function () {
         updateRow(rytter, rowCount, row, inp);
     }
@@ -152,10 +153,15 @@ async function restDeleteCounty(rytter) {
 
 function createTableFromMap() {
     console.log(rytterMap.size);
-    if(document.getElementById("rytterTable").hasChildNodes()){
-        let childNodes = rytterTable.childNodes;
-        childNodes.forEach(elm => rytterTable.removeChild(elm));
+    let table = document.getElementById("rytterTable");
+    var rowCount = table.rows.length;
+    if (rowCount > 2) {
+        console.log("createTableLoop");
+        for (var x = rowCount - 1; x > 1; x--) {
+            table.deleteRow(x);
+        }
     }
+
     rytterMap.forEach(rytter => addRow(rytter));
 }
 
