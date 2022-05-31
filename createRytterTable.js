@@ -24,21 +24,27 @@ function addRow(rytter) {
 
     cell = row.insertCell(colCount++);
     const inp2 = document.createElement('input');
-    inp2.type = "number";
-    inp2.setAttribute("value", rytter.bjergPoint);
+    inp2.type = "text";
+    inp2.setAttribute("value", rytter.land);
     cell.appendChild(inp2);
 
     cell = row.insertCell(colCount++);
     const inp3 = document.createElement('input');
     inp3.type = "number";
-    inp3.setAttribute("value", rytter.spurtPoint);
+    inp3.setAttribute("value", rytter.bjergPoint);
     cell.appendChild(inp3);
 
     cell = row.insertCell(colCount++);
     const inp4 = document.createElement('input');
-    inp4.type = "text";
-    inp4.setAttribute("value", rytter.tid);
+    inp4.type = "number";
+    inp4.setAttribute("value", rytter.spurtPoint);
     cell.appendChild(inp4);
+
+    cell = row.insertCell(colCount++);
+    const inp5 = document.createElement('input');
+    inp5.type = "text";
+    inp5.setAttribute("value", rytter.tid);
+    cell.appendChild(inp5);
 
     //Create a dropdown
     cell = row.insertCell(colCount++);
