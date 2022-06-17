@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrojeOversigt</title>
+    <link rel="stylesheet" href="troje.css">
+</head>
+<body>
+<div id="container">
+    <div class="row">
+        <button id="getRytterTrojer" class="btn-options">Hent Trøjer</button>
+        <button id="createTable" class="btn-options">Vis Trøjer</button>
+
+    </div>
+    <h2>Cykelryttere</h2>
+    <table class="content-table" id="rytterTable">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Navn</th>
+            <th>Alder</th>
+            <th>Land</th>
+            <th>Bjerg Point</th>
+            <th>Spurt Point</th>
+            <th>Tid Totalt</th>
+            <th>Hold Navn</th>
+            <th>Trøje</th>
+        </tr>
+        </thead>
+        <tr></tr>
+    </table>
+</div>
+
+<script src="fetchTrojer.js" ></script>
+<script src="createTrojerTable.js" ></script>
+</body>
+</html>
